@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:~/BookService;AUTO_SERVER=TRUE;INIT=CREATE SCHEMA IF NOT EXISTS public\;SET SCHEMA public;OLD_INFORMATION_SCHEMA=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: public
+        show-sql: true
+        hbm2ddl:
+          auto: validate
+        temp:
+          use_jdbc_metadata_defaults: false
+  h2:
+    console:
+      enabled: true
